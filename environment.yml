@@ -1,0 +1,8 @@
+name: p2p-real
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas
+  - matplotlib
+  - python-duckdb

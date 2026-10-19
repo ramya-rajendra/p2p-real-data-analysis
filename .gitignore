@@ -1,0 +1,5 @@
+# raw and generated data are too big for GitHub
+data/*.xes
+data/*.csv
+__pycache__/
+.ipynb_checkpoints/

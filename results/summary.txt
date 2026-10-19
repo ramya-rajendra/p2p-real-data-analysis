@@ -1,0 +1,54 @@
+=== 1. DATA QUALITY ===
+Events loaded:                  1,595,923
+Cases (order items):            251,734
+Events with impossible dates:   97 (earliest: 1948-01-26)
+Cases removed because of them:  82
+Cases kept for analysis:        251,652
+
+=== 2. HOW MUCH IS ALREADY AUTOMATED? (share of events done by batch users) ===
+Overall: 10% of all events
+  Create Purchase Order Item       251,652 events      8% automated
+  Record Goods Receipt             313,519 events     27% automated
+  Vendor creates invoice           219,546 events      0% automated
+  Record Invoice Receipt           228,118 events      4% automated
+  Remove Payment Block              57,124 events     27% automated
+  Clear Invoice                    194,170 events      0% automated
+  Change Price                      12,404 events      0% automated
+  Change Quantity                   21,443 events      0% automated
+
+=== 3. HOW LONG DOES PAYMENT TAKE? (183,205 cases with invoice and payment) ===
+Median days order created -> paid:        78
+Median days vendor invoice -> paid:       64
+  of which invoice -> recorded in ERP:    10
+  of which recorded -> paid:              43
+Paid within 10 days of invoice (Skonto):  1%
+Paid within 30 days of invoice:           11%
+Paid after 60+ days:                      56%
+
+=== 4. DO PROBLEMS SLOW PAYMENT DOWN? (median days invoice -> paid) ===
+                issue  cases share with_issue without_issue extra_days
+        Payment block 50,500 27.6%         72            62        +10
+Price/quantity change 19,909 10.9%         71            64         +7
+    Invoice cancelled  5,544  3.0%         92            64        +28
+
+=== 5. BY MATCHING TYPE ===
+                                 cases median_days payment_block_rate rework_rate
+item_category                                                                    
+3-way match, invoice before GR 173,253          64              28.0%       10.6%
+3-way match, invoice after GR    9,655          66              21.1%       16.8%
+2-way match                        297          20               0.0%        1.7%
+
+=== 6. TOP 10 VENDORS BY VOLUME ===
+Top 10 vendors = 31% of all paid cases (out of 1,649 vendors)
+               cases median_days payment_block_rate
+vendor                                             
+vendorID_0136 10,598         112              53.8%
+vendorID_0120 10,506          97              22.4%
+vendorID_0104  7,152          72              48.8%
+vendorID_0106  5,404          71              26.9%
+vendorID_0182  4,842          98              22.1%
+vendorID_0103  3,855         102              10.3%
+vendorID_0127  3,577          76              17.5%
+vendorID_0108  3,546          44              31.3%
+vendorID_0118  3,291          57              31.4%
+vendorID_0236  3,131          59              22.5%
